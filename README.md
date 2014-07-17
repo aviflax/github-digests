@@ -8,6 +8,10 @@ GD has a few discrete components; each has its own Git repository. *This* reposi
 * [github-digests-digester](https://github.com/aviflax/github-digests-digester) is the process that runs hourly, retrieves notifications from GitHub’s API, aggregates them into digest emails, and sends those emails. It retrieves accounts and their settings from the database and saves logs to the database.
 * *The database* is a [RethinkDB](http://rethinkdb.com) database. It stores accounts and their settings, and logs. There’s currently no repository for this component because at the moment it’s a 100% stock instance of ReThinkDB with no schema, migrations, secondary indices, or other configuration. If and when those things are necessary, a repository will be created for them.
 
+## Current Status
+
+I’ve started on the Web UI. It’s going slowly because I’m writing it in Ruby at the same time that I learn Ruby. (I’m a sucker for punishment.) It can currently authenticate a user via GitHub, retrieve that user’s “profile” from the GitHub API, create an “account” for the user in the DB, and present a settings page. Next is displaying the default settings and allowing the user to actually change the settings. After that account deletion; then the Web UI should be more or less complete and I’ll move on to the digester.
+
 ## Disclaimer
 
 This project is not affiliated or associated with or endorsed by GitHub (the organization). It employs GitHub’s API in conformance with its terms of service.
